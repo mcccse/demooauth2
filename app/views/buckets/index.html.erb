@@ -1,0 +1,21 @@
+<h1>List of buckets</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @buckets.each do |bucket| %>
+    <tr>
+      <td><%= bucket.title %></td>
+      <td><%= bucket.text %></td>
+      <td><%= link_to 'Show', bucket_path(bucket) %></td>
+      <td><%= link_to 'Edit', edit_bucket_path(bucket) %></td>
+      <td><%= link_to 'Destroy', bucket_path(bucket),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
