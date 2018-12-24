@@ -8,6 +8,12 @@
   <%= @bucket.text %>
 </p>
 
+<h2>Notes:</h2>
+<%= render @bucket.notes %>
+
+<h2>Add a note:</h2>
+<%= render 'notes/form' %>
+
 <%= link_to 'Back', buckets_path %>
 <%= link_to 'Edit', edit_bucket_path(@bucket) %>
 <%= link_to 'Destroy', bucket_path(@bucket),

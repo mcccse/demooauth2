@@ -1,0 +1,15 @@
+  <p>
+    <strong>Note:</strong>
+    <%= note.name %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= note.body %>
+  </p>
+
+  <p>
+  <%= link_to 'Delete note', [note.bucket, note],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>
