@@ -1,6 +1,10 @@
 class BucketsController < ApplicationController
+  protect_from_forgery with: :exception
+  before_action :authenticate_user!
+  before_action require: :user
+
   def index
-    @buckets = Bucket.all
+    @buckets = Bucket.where(user_id: current_user.id)
   end
 
   def show
@@ -17,6 +21,7 @@ class BucketsController < ApplicationController
 
   def create
     @bucket = Bucket.new(bucket_params)
+    @bucket.user = current_user
 
     if @bucket.save
       redirect_to @bucket
