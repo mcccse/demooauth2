@@ -2,6 +2,21 @@
 
 Demooauth2 is a OAuth demo using devise, omniauth and cancancan based on: [https://guides.rubyonrails.org/getting_started.html](https://guides.rubyonrails.org/getting_started.html) created for a [malmö.rb](http://malmorb.se/) meetup.
 
+## Buckets full of random notes
+
+Objectives:
+
+- create named Buckets (:title, presence: true)
+- add named Notes to each bucket (:title, presence: true, and belongs_to :bucket)
+- Bucket and Note must be owned by a User (belongs_to :user)
+- Only authenticated users can list or create Buckets (before_action :authenticate_user!)
+- all bucket and Notes deleted when related User is deleted (has_many :collections, dependent: :destroy)
+- without storing sensitive data (user.password = Devise.friendly_token[0, 20])
+- Tests should verify that all the above works.
+- all code should follow code guideline (standardrb)
+
+To accomplise this we use devise, omniauth and cancancan.
+
 Prereq:  
 Install ruby and rails.  
 This demo is done with
