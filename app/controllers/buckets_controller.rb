@@ -9,6 +9,7 @@ class BucketsController < ApplicationController
 
   def show
     @bucket = Bucket.find(params[:id])
+    authorize! :show, @bucket
   end
 
   def new
@@ -22,6 +23,7 @@ class BucketsController < ApplicationController
   def create
     @bucket = Bucket.new(bucket_params)
     @bucket.user = current_user
+    authorize! :create, @bucket
 
     if @bucket.save
       redirect_to @bucket
@@ -32,6 +34,7 @@ class BucketsController < ApplicationController
 
   def update
     @bucket = Bucket.find(params[:id])
+    authorize! :update, @bucket
 
     if @bucket.update(bucket_params)
       redirect_to @bucket
