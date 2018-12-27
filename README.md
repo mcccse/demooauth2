@@ -13,9 +13,16 @@ Objectives:
 - all bucket and Notes deleted when related User is deleted (has_many :collections, dependent: :destroy)
 - without storing sensitive data (user.password = Devise.friendly_token[0, 20])
 - Tests should verify that all the above works.
-- all code should follow code guideline (standardrb)
+- all code should follow code guideline (standardrb, lint .md)
 
 To accomplise this we use devise, omniauth and cancancan.
+
+## Todo
+
+- Better tests
+- Create presentation material
+- Add more setup into to README.md
+- CI/CD, Gitflow with Travis integration, deploy to heroku
 
 Prereq:  
 Install ruby and rails.  
