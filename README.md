@@ -9,7 +9,7 @@ Objectives:
 - create named Buckets (:title, presence: true)
 - add named Notes to each bucket (:title, presence: true, and belongs_to :bucket)
 - Bucket and Note must be owned by a User (belongs_to :user)
-- Only authenticated users can list or create Buckets (before_action :authenticate_user!)
+- Only authenticated users can list or create Buckets (before_action :authenticate_user!, authorize! :create, @bucket)
 - all bucket and Notes deleted when related User is deleted (has_many :collections, dependent: :destroy)
 - without storing sensitive data (user.password = Devise.friendly_token[0, 20])
 - Tests should verify that all the above works.
