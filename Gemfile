@@ -62,7 +62,7 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "standard", group: [:development, :test]
-gem "devise"
+gem "devise", ">= 4.6.0"
 gem "omniauth-github"
 gem "cancancan"
 
