@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.5.3"
+ruby "2.6.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 5.2.2"
@@ -64,6 +64,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "standard", group: [:development, :test]
 gem "devise", ">= 4.7.1"
 gem "omniauth-github"
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem "cancancan"
 
 group :production do
